@@ -1,0 +1,99 @@
+[
+  {
+    "raw_query": "how do i fix the thing when my account gets locked out",
+    "expected_output": {
+      "optimised_query": "account lockout resolution steps user authentication failure",
+      "keywords": [
+        "account lockout",
+        "locked out",
+        "authentication failure",
+        "password reset",
+        "access denied",
+        "user account",
+        "login error",
+        "unlock account"
+      ],
+      "intent": "troubleshooting"
+    }
+  },
+  {
+    "raw_query": "what is the refund policy",
+    "expected_output": {
+      "optimised_query": "refund policy terms and conditions return request process",
+      "keywords": [
+        "refund policy",
+        "return policy",
+        "money back",
+        "refund request",
+        "cancellation",
+        "terms and conditions"
+      ],
+      "intent": "policy"
+    }
+  },
+  {
+    "raw_query": "hey can you tell me how to set up the vpn thing on my laptop",
+    "expected_output": {
+      "optimised_query": "VPN client installation and configuration steps laptop setup guide",
+      "keywords": [
+        "VPN setup",
+        "VPN configuration",
+        "VPN client",
+        "laptop VPN",
+        "remote access",
+        "network connection",
+        "VPN installation"
+      ],
+      "intent": "how-to"
+    }
+  },
+  {
+    "raw_query": "what's the difference between teams and slack",
+    "expected_output": {
+      "optimised_query": "Microsoft Teams vs Slack comparison features pricing collaboration tools",
+      "keywords": [
+        "Microsoft Teams",
+        "Slack",
+        "Teams vs Slack",
+        "collaboration tools",
+        "messaging platform",
+        "comparison",
+        "features",
+        "pricing"
+      ],
+      "intent": "comparison"
+    }
+  },
+  {
+    "raw_query": "what does SSO mean",
+    "expected_output": {
+      "optimised_query": "Single Sign-On SSO definition authentication mechanism centralised login",
+      "keywords": [
+        "SSO",
+        "Single Sign-On",
+        "authentication",
+        "centralised login",
+        "identity management",
+        "access management"
+      ],
+      "intent": "definition"
+    }
+  },
+  {
+    "raw_query": "hi there, i keep getting error 503 when i try to open the intranet page, it was working yesterday but now it just shows a white screen with that error, can someone help?",
+    "expected_output": {
+      "optimised_query": "HTTP 503 Service Unavailable error intranet website access failure white screen",
+      "keywords": [
+        "503 error",
+        "Service Unavailable",
+        "HTTP error",
+        "intranet",
+        "website down",
+        "white screen",
+        "server error",
+        "web access failure"
+      ],
+      "intent": "troubleshooting"
+    }
+  }
+]
