@@ -1,0 +1,1 @@
+Converts Microsoft Dynamics 365 AXTR task recording files into structured Level 4 Process Training Documents in Markdown format. Parses the XML-based AXTR file, extracts all recorded user steps, and formats them into a professional training document ready for use as a knowledge source or user guide.
