@@ -1,0 +1,53 @@
+{
+  "metadata": {
+    "source_file": "order_to_cash.vsdx",
+    "type": "vsdx",
+    "title": "Order-to-Cash Process"
+  },
+  "processes": [
+    {
+      "id": "p1",
+      "participants": [
+        { "id": "part1", "name": "Customer", "order": 1 },
+        { "id": "part2", "name": "Sales Team", "order": 2 },
+        { "id": "part3", "name": "Warehouse", "order": 3 },
+        { "id": "part4", "name": "Finance", "order": 4 }
+      ],
+      "nodes": [
+        { "id": "n1", "type": "StartEvent", "label": "Order Received", "owner": "Customer" },
+        { "id": "n2", "type": "Task", "label": "Review Order", "owner": "Sales Team" },
+        { "id": "n3", "type": "ExclusiveGateway", "label": "Order Approved?", "owner": "Sales Team" },
+        { "id": "n4", "type": "EndEvent", "label": "Order Rejected", "owner": "Sales Team" },
+        { "id": "n5", "type": "ParallelGateway", "label": "Split Fulfill & Invoice", "owner": "Sales Team" },
+        { "id": "n6", "type": "Task", "label": "Pick and Pack", "owner": "Warehouse" },
+        { "id": "n7", "type": "Task", "label": "Ship Goods", "owner": "Warehouse" },
+        { "id": "n8", "type": "Task", "label": "Generate Invoice", "owner": "Finance" },
+        { "id": "n9", "type": "DataObject", "label": "Invoice Document", "owner": "Finance" },
+        { "id": "n10", "type": "Task", "label": "Send Invoice", "owner": "Finance" },
+        { "id": "n11", "type": "ParallelGateway", "label": "Join Fulfill & Invoice", "owner": "Sales Team" },
+        { "id": "n12", "type": "Task", "label": "Process Payment", "owner": "Finance" },
+        { "id": "n13", "type": "ExclusiveGateway", "label": "Payment Successful?", "owner": "Finance" },
+        { "id": "n14", "type": "Task", "label": "Follow up Payment", "owner": "Finance" },
+        { "id": "n15", "type": "EndEvent", "label": "Order Completed", "owner": "Finance" }
+      ],
+      "edges": [
+        { "id": "e1", "source": "n1", "target": "n2", "label": "Submit Order", "type": "SequenceFlow" },
+        { "id": "e2", "source": "n2", "target": "n3", "label": "", "type": "SequenceFlow" },
+        { "id": "e3", "source": "n3", "target": "n4", "label": "No", "type": "SequenceFlow" },
+        { "id": "e4", "source": "n3", "target": "n5", "label": "Yes", "type": "SequenceFlow" },
+        { "id": "e5", "source": "n5", "target": "n6", "label": "", "type": "SequenceFlow" },
+        { "id": "e6", "source": "n6", "target": "n7", "label": "", "type": "SequenceFlow" },
+        { "id": "e7", "source": "n5", "target": "n8", "label": "", "type": "SequenceFlow" },
+        { "id": "e8", "source": "n8", "target": "n9", "label": "", "type": "Association" },
+        { "id": "e9", "source": "n8", "target": "n10", "label": "", "type": "SequenceFlow" },
+        { "id": "e10", "source": "n7", "target": "n11", "label": "", "type": "SequenceFlow" },
+        { "id": "e11", "source": "n10", "target": "n11", "label": "", "type": "SequenceFlow" },
+        { "id": "e12", "source": "n11", "target": "n12", "label": "", "type": "SequenceFlow" },
+        { "id": "e13", "source": "n12", "target": "n13", "label": "", "type": "SequenceFlow" },
+        { "id": "e14", "source": "n13", "target": "n14", "label": "No", "type": "SequenceFlow" },
+        { "id": "e15", "source": "n14", "target": "n12", "label": "Retry", "type": "SequenceFlow" },
+        { "id": "e16", "source": "n13", "target": "n15", "label": "Yes", "type": "SequenceFlow" }
+      ]
+    }
+  ]
+}
